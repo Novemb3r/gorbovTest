@@ -21,6 +21,7 @@ public class DBStatement {
         try {
             return statement.executeQuery(query);
         } catch (SQLException exception) {
+            System.out.println(exception);
             throw new DBException("Ошибка в запросе");
         }
     }

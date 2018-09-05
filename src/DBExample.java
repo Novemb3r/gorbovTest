@@ -19,8 +19,8 @@ public class DBExample {
 
         ResultSet rs = stat.executeQuery(query);
 
-        while(rs.next()){
-            String id  = rs.getString("email");
+        while (rs.next()) {
+            String id = rs.getString("email");
             String age = rs.getString("password");
 
             System.out.print("email: " + id);

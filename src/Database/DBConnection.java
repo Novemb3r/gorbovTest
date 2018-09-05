@@ -10,7 +10,7 @@ import java.sql.Statement;
  */
 public class DBConnection {
 
-    private Connection connection;
+    private static Connection connection;
 
     private boolean statusOpen = false;
 
@@ -32,7 +32,7 @@ public class DBConnection {
      */
     public boolean open() {
         try {
-            this.connection = DriverManager.getConnection(Constants.DATABASE_URL, Constants.DATABSE_LOGIN, Constants.DATABASE_PASSWORD);
+            connection = DriverManager.getConnection(Constants.DATABASE_URL, Constants.DATABSE_LOGIN, Constants.DATABASE_PASSWORD);
             this.statusOpen = true;
         } catch (SQLException exception) {
             exception.printStackTrace();
@@ -48,11 +48,11 @@ public class DBConnection {
      */
     public boolean close() {
         try {
-            if (this.connection.isClosed()) {
+            if (connection.isClosed()) {
                 return true;
             }
 
-            this.connection.close();
+            connection.close();
             this.statusOpen = false;
 
             return true;
@@ -77,7 +77,7 @@ public class DBConnection {
      */
     public Statement createStatement() throws DBException {
         try {
-            return this.connection.createStatement();
+            return connection.createStatement();
         } catch (SQLException exception) {
             throw new DBException("Ошибка при создании выражения");
         }

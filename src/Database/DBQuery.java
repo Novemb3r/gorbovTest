@@ -50,6 +50,16 @@ public class DBQuery {
     }
 
     /**
+     * Добавляет delete к запросу
+     *
+     * @return DBQuery
+     */
+    public DBQuery insert(String table) {
+        this.queryStatement += "INSERT INTO " + table + " ";
+        return this;
+    }
+
+    /**
      * Добавляет from к запросу
      *
      * @param table название таблицы для получения данных
@@ -57,6 +67,36 @@ public class DBQuery {
      */
     public DBQuery from(String table) {
         this.queryStatement += "FROM " + table + " ";
+        return this;
+    }
+
+    /**
+     * Добавляет where к запросу
+     *
+     * @param condition условие для поиска
+     * @return DBQuery
+     */
+    public <T> DBQuery where(String condition, T value) {
+        this.queryStatement += "WHERE " + condition.replace("?", value.toString());
+        return this;
+    }
+
+    /**
+     * Добавляет where к запросу
+     *
+     * @param conditions условие для поиска
+     * @param values     значения условий
+     * @return DBQuery
+     */
+    public <T> DBQuery where(String[] conditions, T[] values) {
+        this.queryStatement += "WHERE ";
+
+        for (int i = 0; i < conditions.length; i++) {
+            this.queryStatement += conditions[i].replaceFirst("\\?", values[i].toString()) + " AND ";
+        }
+
+        this.queryStatement = this.queryStatement.substring(0, queryStatement.length() - 5);
+
         return this;
     }
 
@@ -86,6 +126,27 @@ public class DBQuery {
 
         this.queryStatement = this.queryStatement.substring(0, queryStatement.length() - 5);
 
+        return this;
+    }
+
+    /**
+     * Добавляет and к запросу
+     *
+     * @return DBQuerry
+     */
+    public DBQuery and() {
+        this.queryStatement += "AND ";
+        return this;
+    }
+
+    /**
+     * Добавляет set к запросу
+     *
+     * @param condition условие для поиска
+     * @return DBQuery
+     */
+    public DBQuery set(String condition) {
+        this.queryStatement += "SET " + condition;
         return this;
     }
 
