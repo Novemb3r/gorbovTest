@@ -17,9 +17,9 @@ public class DBStatement {
         this.statement = connection.createStatement();
     }
 
-    public ResultSet executeQuerry(String querry) throws DBException {
+    public ResultSet executeQuery(String query) throws DBException {
         try {
-            return statement.executeQuery(querry);
+            return statement.executeQuery(query);
         } catch (SQLException exception) {
             throw new DBException("Ошибка в запросе");
         }
