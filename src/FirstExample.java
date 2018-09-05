@@ -7,8 +7,8 @@ public class FirstExample {
     static final String DB_URL = "jdbc:mysql://db4free.net:3306/gorbovdb";
 
     //  Database credentials
-    static final String USER = "********";
-    static final String PASS = "********";
+    static final String USER = "pm43dev";
+    static final String PASS = "100234567";
 
     public static void main(String[] args) {
         Connection conn = null;
