@@ -19,13 +19,13 @@ public class AuthExample {
         DBStatement stat = new DBStatement(conn);
 
         //@TODO: обрамлять в кавычки внутри where
-        if (auth.isRegistred("'i@i.ru'")) {
+        if (auth.isRegistred("i@i.ru")) {
             System.out.println("i@i.ru is registred");
         } else {
             System.out.println("i@i.ru is not registred");
         }
 
-        if (auth.isRegistred("'a@a.ru'")) {
+        if (auth.isRegistred("a@a.ru")) {
             System.out.println("a@a.ru is registred");
         } else {
             System.out.println("a@a.ru is not registred");

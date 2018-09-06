@@ -50,12 +50,31 @@ public class DBQuery {
     }
 
     /**
-     * Добавляет delete к запросу
+     * Добавляет insert к запросу
      *
      * @return DBQuery
      */
     public DBQuery insert(String table) {
         this.queryStatement += "INSERT INTO " + table + " ";
+        return this;
+    }
+
+    /**
+     * Добавляет insert к запросу
+     *
+     * @return DBQuery
+     */
+    public DBQuery insert(String table, String[] fields) {
+        this.queryStatement += "INSERT INTO " + table + " (";
+
+        for (String field : fields) {
+            this.queryStatement += field + ", ";
+        }
+
+        this.queryStatement = this.queryStatement.substring(0, this.queryStatement.length() - 2);
+
+        this.queryStatement += ") ";
+
         return this;
     }
 
@@ -77,7 +96,7 @@ public class DBQuery {
      * @return DBQuery
      */
     public <T> DBQuery where(String condition, T value) {
-        this.queryStatement += "WHERE " + condition.replace("?", value.toString());
+        this.queryStatement += "WHERE " + condition.replace("?", "'" + value.toString() + "'");
         return this;
     }
 
@@ -92,7 +111,7 @@ public class DBQuery {
         this.queryStatement += "WHERE ";
 
         for (int i = 0; i < conditions.length; i++) {
-            this.queryStatement += conditions[i].replaceFirst("\\?", values[i].toString()) + " AND ";
+            this.queryStatement += conditions[i].replaceFirst("\\?", "'" + values[i].toString()) + "' AND ";
         }
 
         this.queryStatement = this.queryStatement.substring(0, queryStatement.length() - 5);
@@ -147,6 +166,25 @@ public class DBQuery {
      */
     public DBQuery set(String condition) {
         this.queryStatement += "SET " + condition;
+        return this;
+    }
+
+    /**
+     * Добавляет set к запросу
+     *
+     * @param values условие для поиска
+     * @return DBQuery
+     */
+    public DBQuery values(String[] values) {
+        this.queryStatement += "VALUES (";
+
+        for (String value : values) {
+            this.queryStatement += " '" + value + "', ";
+        }
+
+        this.queryStatement = this.queryStatement.substring(0, this.queryStatement.length() - 2);
+        this.queryStatement += ") ";
+
         return this;
     }
 

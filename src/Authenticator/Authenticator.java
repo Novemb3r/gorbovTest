@@ -23,19 +23,64 @@ public class Authenticator {
         connection = conn;
     }
 
+    /**
+     * Проверяет, зарегистрирован ли пользователь
+     *
+     * @param email email
+     * @return boolean
+     * @throws DBException
+     * @throws SQLException
+     */
     public boolean isRegistred(String email) throws DBException, SQLException {
         String query = (new DBQuery()).select().from("users").where("email = ?", email).getQuery();
         ResultSet rs = (new DBStatement(connection)).executeQuery(query);
 
-        if (rs.next()) {
-            return true;
-        }
-        return false;
+        return rs.next();
     }
 
-    public boolean authenticate(String email, String password) {
-        // String hash = getMd5Hash();
-        return true;
+    /**
+     * Проверяет авторизацию
+     *
+     * @param email email
+     * @return boolean
+     * @throws DBException
+     * @throws SQLException
+     */
+    public boolean authenticate(String email, String password) throws SQLException, DBException {
+
+        String query = (new DBQuery())
+                .select("count *")
+                .from("users")
+                .where("email = ? AND password = ?", new String[]{email, getMd5Hash(password)})
+                .getQuery();
+
+        ResultSet rs = (new DBStatement(connection)).executeQuery(query);
+
+        return rs.next();
+    }
+
+    /**
+     * Регистрирут нового пользователя
+     *
+     * @param email email
+     * @return boolean
+     * @throws DBException
+     * @throws SQLException
+     */
+    public boolean register(String email, String password) throws SQLException, DBException {
+
+        if (this.isRegistred(email)) {
+            return false;
+        }
+
+        String query = (new DBQuery())
+                .insert("users", new String[]{"email", "password"})
+                .values(new String[]{email, getMd5Hash(password)})
+                .getQuery();
+
+        int i = (new DBStatement(connection)).executeUpdate(query);
+
+        return (i != 0);
     }
 
     /**

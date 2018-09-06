@@ -21,6 +21,17 @@ public class DBStatement {
         try {
             return statement.executeQuery(query);
         } catch (SQLException exception) {
+            System.out.println(query);
+            System.out.println(exception);
+            throw new DBException("Ошибка в запросе");
+        }
+    }
+
+    public int executeUpdate(String query) throws DBException {
+        try {
+            return statement.executeUpdate(query);
+        } catch (SQLException exception) {
+            System.out.println(query);
             System.out.println(exception);
             throw new DBException("Ошибка в запросе");
         }
