@@ -95,8 +95,38 @@ public class DBQuery {
      * @param condition условие для поиска
      * @return DBQuery
      */
+    public DBQuery where(String condition, String value) {
+        this.queryStatement += "WHERE " + condition.replace("?", "'" + value + "'");
+        return this;
+    }
+
+    /**
+     * Добавляет where к запросу
+     *
+     * @param conditions условие для поиска
+     * @param values     значения условий
+     * @return DBQuery
+     */
+    public DBQuery where(String[] conditions, String[] values) {
+        this.queryStatement += "WHERE ";
+
+        for (int i = 0; i < conditions.length; i++) {
+            this.queryStatement += conditions[i].replaceFirst("\\?", "'" + values[i].toString()) + "' AND ";
+        }
+
+        this.queryStatement = this.queryStatement.substring(0, queryStatement.length() - 5);
+
+        return this;
+    }
+
+    /**
+     * Добавляет where к запросу
+     *
+     * @param condition условие для поиска
+     * @return DBQuery
+     */
     public <T> DBQuery where(String condition, T value) {
-        this.queryStatement += "WHERE " + condition.replace("?", "'" + value.toString() + "'");
+        this.queryStatement += "WHERE " + condition.replace("?", value.toString());
         return this;
     }
 
@@ -111,7 +141,7 @@ public class DBQuery {
         this.queryStatement += "WHERE ";
 
         for (int i = 0; i < conditions.length; i++) {
-            this.queryStatement += conditions[i].replaceFirst("\\?", "'" + values[i].toString()) + "' AND ";
+            this.queryStatement += conditions[i].replaceFirst("\\?", values[i].toString()) + " AND ";
         }
 
         this.queryStatement = this.queryStatement.substring(0, queryStatement.length() - 5);
@@ -179,7 +209,7 @@ public class DBQuery {
         this.queryStatement += "VALUES (";
 
         for (String value : values) {
-            this.queryStatement += " '" + value + "', ";
+            this.queryStatement += "'" + value + "', ";
         }
 
         this.queryStatement = this.queryStatement.substring(0, this.queryStatement.length() - 2);
