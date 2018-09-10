@@ -19,6 +19,13 @@ public class Authenticator {
     private static MessageDigest Md5Hasher;
     private static DBConnection connection;
 
+    private boolean authenticated = false;
+
+    /**
+     * Конструктор класса
+     *
+     * @param conn DBCconnection
+     */
     public Authenticator(DBConnection conn) {
         connection = conn;
     }
@@ -48,6 +55,10 @@ public class Authenticator {
      */
     public boolean authenticate(String email, String password) throws SQLException, DBException {
 
+        if (authenticated) {
+            return true;
+        }
+
         String query = (new DBQuery())
                 .select("count *")
                 .from("users")
@@ -56,11 +67,12 @@ public class Authenticator {
 
         ResultSet rs = (new DBStatement(connection)).executeQuery(query);
 
-        return rs.next();
+        this.authenticated = rs.next();
+        return this.authenticated;
     }
 
     /**
-     * Регистрирут нового пользователя
+     * Регистрирует нового пользователя
      *
      * @param email email
      * @return boolean
@@ -111,6 +123,16 @@ public class Authenticator {
         }
 
         return hashtext;
+    }
+
+
+    /**
+     * Аозвращает статус авторизованности пользователя
+     *
+     * @return boolean
+     */
+    public boolean isAuthenticated() {
+        return this.authenticated;
     }
 
 }
