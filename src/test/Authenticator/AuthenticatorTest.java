@@ -5,7 +5,7 @@ import Authenticator.Authenticator;
 
 public class AuthenticatorTest extends TestCase {
 
-    String[][] dataProvider =
+    private String[][] dataProvider =
             {
                     {
                             "",

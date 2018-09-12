@@ -17,8 +17,7 @@ public class AuthExample {
 
         Authenticator auth = new Authenticator(conn);
         DBStatement stat = new DBStatement(conn);
-
-        //@TODO: обрамлять в кавычки внутри where
+        
         if (auth.isRegistred("i@i.ru")) {
             System.out.println("i@i.ru is registred");
         } else {

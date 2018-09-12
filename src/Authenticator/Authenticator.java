@@ -132,7 +132,7 @@ public class Authenticator {
      * @return boolean
      */
     public boolean isAuthenticated() {
-        return this.authenticated;
+        return authenticated;
     }
 
 }
