@@ -21,7 +21,7 @@ public class DBConnection {
         try {
             Class.forName(Constants.JDBC_DRIVER_NAME);
         } catch (java.lang.ClassNotFoundException exception) {
-            throw new DBException("Класс не найден");
+            throw new DBException("Отсутствует JDBC драйвер");
         }
     }
 
