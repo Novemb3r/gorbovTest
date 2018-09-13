@@ -9,6 +9,6 @@ public class LoginForm {
     private JTextField loginField;
     private JTextField statusField;
 
-    
-
+    public LoginForm() {
+    }
 }
