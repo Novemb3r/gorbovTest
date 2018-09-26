@@ -4,6 +4,7 @@ import GUI.Objects.TestFieldButton;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class SquareForm extends JFrame {
     public JPanel panel1;
@@ -25,6 +26,8 @@ public class SquareForm extends JFrame {
                 squareBut[i][j].setLocation(j * width, i * height);
                 squareBut[i][j].addActionListener(new FieldButtonController());
                 squareBut[i][j].position.setPosition(j, i);
+                squareBut[i][j].setType(ThreadLocalRandom.current().nextInt(0,2));
+                squareBut[i][j].setNumber(ThreadLocalRandom.current().nextInt(0,50));
                 this.panel1.add(squareBut[i][j]);
             }
         }
