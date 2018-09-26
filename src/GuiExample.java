@@ -1,6 +1,4 @@
-import GUI.LoginForm;
-import GUI.Test1;
-import GUI.SquareForm;
+import GUI.SquareForm.SquareForm;
 
 import javax.swing.*;
 import java.awt.*;
