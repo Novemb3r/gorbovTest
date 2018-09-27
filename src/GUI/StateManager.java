@@ -2,10 +2,12 @@ package GUI;
 
 import GUI.Controllers.IFormController;
 
-import java.lang.reflect.InvocationTargetException;
-
 /**
- * Менеджер состояний.
+ * Менеджер состояний
+ * По задумке - по переданному классу контроллера формы создаст контроллер и дернет loadForm(),
+ * что приведет к отображению новой формы.
+ *
+ * Статический, да него можно безболезненно дотянуться из любого метода
  */
 public final class StateManager {
 

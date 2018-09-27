@@ -1,5 +1,8 @@
 package Models.Stages;
 
+/**
+ * Абстрактный класс теста. Классы наследники реализуют логику конкретного теста
+ */
 public abstract class StageAbstract {
 
     protected static int[] currentNumber;

@@ -6,6 +6,9 @@ import Entities.Point;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Класс кнопки на поле теста. Слегка дополняет логику обычной JButton
+ */
 public class TestFieldButton extends JButton {
 
     public TestFieldButton() {
