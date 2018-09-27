@@ -2,6 +2,7 @@ package GUI.Controllers;
 
 import GUI.Forms.SquareForm.SquareForm;
 import Models.Stages.FirstGorbovStage;
+import Models.Stages.SecondGorbovStage;
 
 import javax.swing.*;
 import java.awt.*;

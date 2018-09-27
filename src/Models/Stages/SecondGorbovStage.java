@@ -2,20 +2,26 @@ package Models.Stages;
 
 import Entities.FieldColor;
 
-public final class FirstGorbovStage extends StageAbstract {
+public final class SecondGorbovStage extends StageAbstract {
 
-    protected int[] currentNumber = {1, 1};
+    protected int[] currentNumber = {1, 24};
 
     protected int currentColor = FieldColor.BLACK;
 
     protected void switchCurrentColor() {
-        if (this.currentColor == FieldColor.BLACK && this.currentNumber[FieldColor.BLACK] == 26) {
+        if (this.currentColor == FieldColor.RED) {
+            this.currentColor = FieldColor.BLACK;
+        } else {
             this.currentColor = FieldColor.RED;
         }
     }
 
     protected void updateCurrentNumber(int color) {
-        this.currentNumber[color]++;
+        if (color == FieldColor.BLACK) {
+            this.currentNumber[color]++;
+        } else {
+            this.currentNumber[color]--;
+        }
     }
 
     public boolean playersTurn(int number, int color) {
@@ -28,4 +34,5 @@ public final class FirstGorbovStage extends StageAbstract {
 
         return true;
     }
+
 }
