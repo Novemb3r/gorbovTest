@@ -1,11 +1,18 @@
 package GUI.Objects;
 
-import GUI.Entities.Point;
+import Entities.FieldColor;
+import Entities.Point;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class TestFieldButton extends JButton {
+
+    public TestFieldButton() {
+        this.setForeground(Color.WHITE);
+        this.setFont(new Font("Arial", Font.PLAIN, 40));
+    }
+
     public Point position = new Point();
 
     protected int type;
@@ -19,7 +26,7 @@ public class TestFieldButton extends JButton {
     public void setType(int type) {
         this.type = type;
 
-        if (this.type == 1) {
+        if (this.type == FieldColor.BLACK) {
             this.setBackground(Color.BLACK);
         } else {
             this.setBackground(Color.RED);
@@ -33,5 +40,10 @@ public class TestFieldButton extends JButton {
     public void setNumber(int number) {
         this.number = number;
         this.setText(Integer.toString(this.number));
+    }
+
+    public void markDisabled(){
+        this.setEnabled(false);
+        this.setBackground(Color.GRAY);
     }
 }

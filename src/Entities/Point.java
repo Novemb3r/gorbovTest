@@ -1,4 +1,4 @@
-package GUI.Entities;
+package Entities;
 
 public class Point {
 
