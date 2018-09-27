@@ -5,13 +5,7 @@ import Entities.FieldColor;
 public class FirstGorbovStage extends StageAbstract {
 
     protected int[] currentNumber = {1, 24};
-
-    /**
-     * 0 - черное
-     * 1 - красное
-     * <p>
-     * Плохое решение, любые лучшие решения принимаются
-     */
+    
     protected int currentColor = FieldColor.BLACK;
 
     protected void switchCurrentColor() {
