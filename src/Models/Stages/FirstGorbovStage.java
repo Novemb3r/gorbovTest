@@ -5,7 +5,7 @@ import Entities.FieldColor;
 public class FirstGorbovStage extends StageAbstract {
 
     protected int[] currentNumber = {1, 24};
-    
+
     protected int currentColor = FieldColor.BLACK;
 
     protected void switchCurrentColor() {
@@ -17,10 +17,10 @@ public class FirstGorbovStage extends StageAbstract {
     }
 
     protected void updateCurrentNumber(int color) {
-        if (color == 1) {
-            this.currentNumber[color]--;
-        } else {
+        if (color == FieldColor.BLACK) {
             this.currentNumber[color]++;
+        } else {
+            this.currentNumber[color]--;
         }
     }
 
