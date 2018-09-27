@@ -1,13 +1,10 @@
-package GUI.SquareForm;
+package GUI.Forms.SquareForm;
 
 import GUI.Objects.TestFieldButton;
-import Models.Stages.FirstGorbovStage;
 import Models.Stages.StageAbstract;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.Random;
-import java.util.concurrent.ThreadLocalRandom;
 
 import static Helpers.Random.getRandomGameField;
 
@@ -16,18 +13,18 @@ public class SquareForm extends JFrame {
     public StageAbstract stage;
     TestFieldButton[][] squareBut;
 
-    public SquareForm() {
+    public SquareForm(StageAbstract stage) {
         panel1.setLayout(new GridLayout(7, 7, 0, 0));
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        //@TODO: передавать как параметр. Agile for the agile God!
-        this.stage = new FirstGorbovStage();
+
+        this.stage = stage;
     }
 
     public void generate() {
         squareBut = new TestFieldButton[7][7];
 
 
-        int [][][] field = getRandomGameField();
+        int[][][] field = getRandomGameField();
         int width = 100;
         int height = 100;
         for (int i = 0; i < 7; i++) {

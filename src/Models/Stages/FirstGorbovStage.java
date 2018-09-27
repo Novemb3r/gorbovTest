@@ -2,7 +2,7 @@ package Models.Stages;
 
 import Entities.FieldColor;
 
-public class FirstGorbovStage extends StageAbstract {
+public final class FirstGorbovStage extends StageAbstract {
 
     protected int[] currentNumber = {1, 24};
 

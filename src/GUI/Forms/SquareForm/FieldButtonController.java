@@ -1,4 +1,4 @@
-package GUI.SquareForm;
+package GUI.Forms.SquareForm;
 
 import GUI.Objects.TestFieldButton;
 import Models.Stages.StageAbstract;

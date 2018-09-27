@@ -40,9 +40,9 @@ public class Random {
 
         for (int i = 0; i < 7; i++)
             for (int j = 0; j < 7; j++) {
-                if (buf[i * 7 + j] >= 24) {
+                if (buf[i * 7 + j] >= 25) {
                     result[i][j][0] = 1;
-                    result[i][j][1] = buf[i * 7 + j] - 23;
+                    result[i][j][1] = buf[i * 7 + j] - 24;
                 } else {
                     result[i][j][0] = 0;
                     result[i][j][1] = buf[i * 7 + j] + 1;

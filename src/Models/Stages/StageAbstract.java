@@ -2,9 +2,9 @@ package Models.Stages;
 
 public abstract class StageAbstract {
 
-    protected int[] currentNumber;
+    protected static int[] currentNumber;
 
-    protected int currentColor;
+    protected static int currentColor;
 
     protected abstract void switchCurrentColor();
 
