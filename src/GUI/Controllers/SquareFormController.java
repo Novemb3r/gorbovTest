@@ -7,8 +7,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class SquareFormController implements IFormController {
-
-    @Override
+    
     public void loadForm() {
         JFrame frame = new JFrame("Метод Горбова");
         frame.setPreferredSize(new Dimension(600, 600));

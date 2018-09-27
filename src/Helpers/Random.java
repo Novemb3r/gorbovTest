@@ -9,12 +9,11 @@ import java.util.concurrent.ThreadLocalRandom;
  */
 public class Random {
 
-    private static int[] shuffle(int[] array) {
+    private static void shuffle(int[] array) {
         int count = array.length;
         for (int i = count; i > 1; i--) {
             swap(array, i - 1, ThreadLocalRandom.current().nextInt(i));
         }
-        return array;
     }
 
     private static void swap(int[] array, int i, int j) {
