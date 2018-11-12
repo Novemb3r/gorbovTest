@@ -39,7 +39,7 @@ public class Authenticator {
      * @throws SQLException
      */
     public boolean isRegistred(String email) throws DBException, SQLException {
-        String query = (new DBQuery()).select().from("users").where("email = ?", email).getQuery();
+        String query = (new DBQuery()).select().from(Constants.TABLE).where("email = ?", email).getQuery();
         ResultSet rs = (new DBStatement(connection)).executeQuery(query);
 
         return rs.next();
@@ -60,9 +60,9 @@ public class Authenticator {
         }
 
         String query = (new DBQuery())
-                .select("count *")
-                .from("users")
-                .where("email = ? AND password = ?", new String[]{email, getMd5Hash(password)})
+                .select("count(*)")
+                .from(Constants.TABLE)
+                .where(new String[]{"`email` = ?", "`password` = ?"}, new String[]{email, getMd5Hash(password)})
                 .getQuery();
 
         ResultSet rs = (new DBStatement(connection)).executeQuery(query);
@@ -86,7 +86,7 @@ public class Authenticator {
         }
 
         String query = (new DBQuery())
-                .insert("users", new String[]{"email", "password"})
+                .insert(Constants.TABLE, new String[]{"email", "password"})
                 .values(new String[]{email, getMd5Hash(password)})
                 .getQuery();
 

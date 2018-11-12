@@ -85,7 +85,7 @@ public class DBQuery {
      * @return DBQuery
      */
     public DBQuery from(String table) {
-        this.queryStatement += "FROM " + table + " ";
+        this.queryStatement += "FROM `" + table + "` ";
         return this;
     }
 
@@ -224,6 +224,7 @@ public class DBQuery {
      * @return String
      */
     public String getQuery() {
+
         return this.queryStatement;
     }
 
