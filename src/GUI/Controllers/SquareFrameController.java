@@ -11,7 +11,7 @@ public class SquareFrameController extends DestroyableFrame implements IFormCont
     @Override
     public void loadForm() {
         this.frame = new JFrame("Метод Горбова");
-        this.frame.setPreferredSize(new Dimension(600, 600));
+        //this.frame.setPreferredSize(new Dimension(600, 600));
         this.frame.setResizable(false);
         SquareForm field = new SquareForm(new FirstGorbovStage());
 

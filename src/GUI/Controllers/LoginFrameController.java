@@ -11,7 +11,7 @@ public class LoginFrameController extends DestroyableFrame implements IFormContr
     public void loadForm() {
         this.frame = new JFrame("Логин");
         frame.setResizable(false);
-        frame.setPreferredSize(new Dimension(600, 600));
+        //frame.setPreferredSize(new Dimension(600, 600));
         LoginForm field = new LoginForm();
 
 

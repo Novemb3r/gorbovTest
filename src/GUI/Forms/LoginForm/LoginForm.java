@@ -1,7 +1,9 @@
 package GUI.Forms.LoginForm;
 
+import GUI.Controllers.MainMenuFrameController;
 import GUI.Controllers.RegisterFrameController;
 import GUI.Forms.Constants;
+import GUI.Forms.MainMenuForm.MainMenu;
 import GUI.StateManager;
 import Models.Authenticator.Authenticator;
 
@@ -25,6 +27,8 @@ public class LoginForm extends JFrame {
 
                 if (Authenticator.authUser(login, password)) {
                     JOptionPane.showMessageDialog(new JFrame(), "Login ok");
+                    StateManager.destroyForm(Constants.LOGIN_FORM);
+                    StateManager.loadController(MainMenuFrameController .class, Constants.MENU_FORM);
                 } else {
                     JOptionPane.showMessageDialog(new JFrame(), "Login not ok");
                 }

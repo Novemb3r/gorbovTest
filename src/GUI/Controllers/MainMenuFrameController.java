@@ -12,7 +12,7 @@ public class MainMenuFrameController extends DestroyableFrame implements IFormCo
     public void loadForm() {
         this.frame = new JFrame("Главное меню");
         frame.setResizable(false);
-        frame.setPreferredSize(new Dimension(600, 600));
+       // frame.setPreferredSize(new Dimension(600, 600));
         MainMenu field = new MainMenu();
 
 

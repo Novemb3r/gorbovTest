@@ -94,6 +94,19 @@ public class Authenticator {
         return (i != 0);
     }
 
+    public boolean addUserInfo(String name, String surname, String patronym, String dateOfBirth, String gender) throws SQLException, DBException {
+
+//        String query = (new DBQuery())
+//                .insert(Constants.TABLE, new String[]{"email", "password"})
+//                .values(new String[]{email, getMd5Hash(password)})
+//                .getQuery();
+//
+//        int i = (new DBStatement(Config.conn)).executeUpdate(query);
+//
+//        return (i != 0);
+        return true;
+    }
+
     /**
      * Возвращает MD5 от соленого пароля
      * Иногда java заставляет тебя плакать

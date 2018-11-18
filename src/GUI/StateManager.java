@@ -25,6 +25,7 @@ public final class StateManager {
 
         } catch (Exception e) {
             System.out.println("Тут бросается тонна исключений. Удачи понять какую ты только что словил :)");
+            e.printStackTrace();
         }
     }
 

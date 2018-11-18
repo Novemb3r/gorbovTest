@@ -1,6 +1,7 @@
 package GUI.Forms.MainMenuForm;
 
 import GUI.Controllers.RegisterFrameController;
+import GUI.Controllers.SquareFrameController;
 import GUI.Forms.Constants;
 import GUI.StateManager;
 
@@ -19,7 +20,7 @@ public class MainMenu {
             @Override
             public void actionPerformed(ActionEvent e) {
                 StateManager.destroyForm(Constants.MENU_FORM);
-                StateManager.loadController(RegisterFrameController.class, Constants.REGISTER_FORM);
+                StateManager.loadController(SquareFrameController.class, Constants.TEST_STAGE);
             }
         });
     }
