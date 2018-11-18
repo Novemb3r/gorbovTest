@@ -21,6 +21,7 @@ public class Registrator {
         //@TODO: отправлять данные пользователя в базу
         try {
             auth.register(login, password);
+            auth.addUserInfo(name, surname, patronym, dateOfBirth, gender);
             return true;
         } catch (Exception e) {
             e.printStackTrace();

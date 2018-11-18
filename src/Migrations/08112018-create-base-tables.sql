@@ -20,10 +20,11 @@ CREATE TABLE results
 (
   `id` INT(8) unsigned NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `userId` INT(8) unsigned NOT NULL,
-  `dateBeginFirstStage` DATETIME,
-  `dateEndFirstStage` DATETIME,
-  `dateBeginSecondStage` DATETIME,
-  `dateEndSecondStage` DATETIME,
+  `dateBeginFirstStage` TIMESTAMP,
+  `dateEndFirstStage` TIMESTAMP,
+  `dateBeginSecondStage` TIMESTAMP,
+  `dateEndSecondStage` TIMESTAMP,
+  `errors` INT(8) unsigned
   FOREIGN KEY (`userId`)
   REFERENCES users(id)
     ON DELETE CASCADE

@@ -8,14 +8,14 @@ import GUI.StateManager;
 public class GuiExample {
 
     public static void main(String[] args) {
-//        try {
-//            Config.conn = new DBConnection();
-//            Config.conn.open();
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//
-//        StateManager.loadController(LoginFrameController.class, Constants.LOGIN_FORM);
-        StateManager.loadController(SquareFrameController.class, "123123");
+        try {
+            Config.conn = new DBConnection();
+            Config.conn.open();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        StateManager.loadController(LoginFrameController.class, Constants.LOGIN_FORM);
+//        StateManager.loadController(SquareFrameController.class, "123123");
     }
 }

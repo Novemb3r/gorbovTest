@@ -5,6 +5,10 @@ package Models.Stages;
  */
 public abstract class StageAbstract {
 
+    public static long startTimestamp;
+
+    public static long endTimestamp;
+
     protected static int[] currentNumber;
 
     protected static int currentColor;

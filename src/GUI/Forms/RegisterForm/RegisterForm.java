@@ -25,13 +25,13 @@ public class RegisterForm {
                 String login = loginField.getText();
                 String password = passwordField.getText();
                 String surname = surnameField.getText();
-                String patronym = patronymicField.getText();
+                String patronymic = patronymicField.getText();
                 String name = nameField.getText();
                 String dateOfBirth = birthdayDateField.getText();
                 String gender = String.valueOf(genderBox.getSelectedItem());
 
 
-                if (Registrator.registerUser(login, password, name, surname, patronym, dateOfBirth, gender)) {
+                if (Registrator.registerUser(login, password, name, surname, patronymic, dateOfBirth, gender)) {
                     JOptionPane.showMessageDialog(new JFrame(), "Register ok");
                 } else {
                     JOptionPane.showMessageDialog(new JFrame(), "Register not ok");

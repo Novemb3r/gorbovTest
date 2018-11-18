@@ -22,7 +22,6 @@ public class Authenticator {
 
     /**
      * Конструктор класса
-     *
      */
     public Authenticator() {
     }
@@ -94,17 +93,24 @@ public class Authenticator {
         return (i != 0);
     }
 
-    public boolean addUserInfo(String name, String surname, String patronym, String dateOfBirth, String gender) throws SQLException, DBException {
+    public boolean addUserInfo(String name, String surname, String patronymic, String dateOfBirth, String gender) throws DBException {
 
-//        String query = (new DBQuery())
-//                .insert(Constants.TABLE, new String[]{"email", "password"})
-//                .values(new String[]{email, getMd5Hash(password)})
-//                .getQuery();
-//
-//        int i = (new DBStatement(Config.conn)).executeUpdate(query);
-//
-//        return (i != 0);
-        return true;
+        if (gender.equals("М")) {
+            gender = "male";
+        }
+
+        if (gender.equals("Ж")) {
+            gender = "female";
+        }
+
+        String query = (new DBQuery())
+                .insert("users", new String[]{"name", "surname", "patronymic", "dateOfBirth", "gender"})
+                .values(new String[]{name, surname, patronymic, dateOfBirth, gender})
+                .getQuery();
+
+        int i = (new DBStatement(Config.conn)).executeUpdate(query);
+
+        return (i != 0);
     }
 
     /**
