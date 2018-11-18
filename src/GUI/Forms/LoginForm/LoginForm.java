@@ -3,6 +3,8 @@ package GUI.Forms.LoginForm;
 import Authenticator.Authenticator;
 import Database.DBConnection;
 import Database.DBStatement;
+import GUI.Forms.Constants;
+import GUI.StateManager;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -36,6 +38,14 @@ public class LoginForm extends JFrame {
                 } catch (Exception exception) {
                     exception.printStackTrace();
                 }
+            }
+        });
+
+
+        registerButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                StateManager.destroyForm(Constants.LOGIN_FORM);
             }
         });
     }

@@ -67,7 +67,9 @@ public class Authenticator {
 
         ResultSet rs = (new DBStatement(connection)).executeQuery(query);
 
-        this.authenticated = rs.next();
+        //@TODO: покрыть искючениями
+        rs.next();
+        this.authenticated = rs.getInt(1) != 0;
         return this.authenticated;
     }
 
