@@ -1,7 +1,5 @@
 package Models.Authenticator;
 
-import javax.swing.*;
-
 public class Authenticator {
 
     public static boolean authUser(String login, String password) {

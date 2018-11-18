@@ -8,6 +8,7 @@ import java.awt.*;
 
 public class SquareFrameController extends DestroyableFrame implements IFormController {
 
+    @Override
     public void loadForm() {
         this.frame = new JFrame("Метод Горбова");
         this.frame.setPreferredSize(new Dimension(600, 600));

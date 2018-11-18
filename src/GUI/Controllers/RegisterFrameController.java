@@ -8,6 +8,7 @@ import java.awt.*;
 
 public class RegisterFrameController extends DestroyableFrame implements IFormController {
 
+    @Override
     public void loadForm() {
         this.frame = new JFrame("Регистрация");
         frame.setResizable(false);
