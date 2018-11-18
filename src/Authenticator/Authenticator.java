@@ -1,5 +1,6 @@
 package Authenticator;
 
+import Common.Config;
 import Database.DBConnection;
 import Database.DBException;
 import Database.DBQuery;
@@ -17,17 +18,14 @@ import java.sql.SQLException;
 public class Authenticator {
 
     private static MessageDigest Md5Hasher;
-    private static DBConnection connection;
 
     private boolean authenticated = false;
 
     /**
      * Конструктор класса
      *
-     * @param conn DBCconnection
      */
-    public Authenticator(DBConnection conn) {
-        connection = conn;
+    public Authenticator() {
     }
 
     /**
@@ -40,7 +38,7 @@ public class Authenticator {
      */
     public boolean isRegistred(String email) throws DBException, SQLException {
         String query = (new DBQuery()).select().from(Constants.TABLE).where("email = ?", email).getQuery();
-        ResultSet rs = (new DBStatement(connection)).executeQuery(query);
+        ResultSet rs = (new DBStatement(Config.conn)).executeQuery(query);
 
         return rs.next();
     }
@@ -65,7 +63,7 @@ public class Authenticator {
                 .where(new String[]{"`email` = ?", "`password` = ?"}, new String[]{email, getMd5Hash(password)})
                 .getQuery();
 
-        ResultSet rs = (new DBStatement(connection)).executeQuery(query);
+        ResultSet rs = (new DBStatement(Config.conn)).executeQuery(query);
 
         //@TODO: покрыть искючениями
         rs.next();
@@ -92,7 +90,7 @@ public class Authenticator {
                 .values(new String[]{email, getMd5Hash(password)})
                 .getQuery();
 
-        int i = (new DBStatement(connection)).executeUpdate(query);
+        int i = (new DBStatement(Config.conn)).executeUpdate(query);
 
         return (i != 0);
     }

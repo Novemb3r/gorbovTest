@@ -12,7 +12,7 @@ public class RegisExample {
 
         conn.open();
 
-        Authenticator auth = new Authenticator(conn);
+        Authenticator auth = new Authenticator();
         DBStatement stat = new DBStatement(conn);
 
         boolean reg = auth.register("igkutyrev@gmai.com", "mypass");

@@ -3,12 +3,14 @@ package GUI.Forms.LoginForm;
 import Authenticator.Authenticator;
 import Database.DBConnection;
 import Database.DBStatement;
+import GUI.Controllers.RegisterFrameController;
 import GUI.Forms.Constants;
 import GUI.StateManager;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.ObjectInputFilter;
 
 public class LoginForm extends JFrame {
     public JPanel panel1;
@@ -25,14 +27,12 @@ public class LoginForm extends JFrame {
                 String password = passwordTextField.getText();
 
                 try {
-                    DBConnection conn = new DBConnection();
-                    conn.open();
-                    Authenticator auth = new Authenticator(conn);
+                    Authenticator auth = new Authenticator();
 
                     if (auth.authenticate(login, password)){
-                        JOptionPane.showMessageDialog(new JFrame(), "Login correct");
+                        JOptionPane.showMessageDialog(new JFrame(), "Login ok");
                     } else {
-                        JOptionPane.showMessageDialog(new JFrame(), "Login incorrect");
+                        JOptionPane.showMessageDialog(new JFrame(), "Login ok");
                     }
 
                 } catch (Exception exception) {
@@ -46,6 +46,7 @@ public class LoginForm extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 StateManager.destroyForm(Constants.LOGIN_FORM);
+                StateManager.loadController(RegisterFrameController.class, Constants.REGISTER_FORM);
             }
         });
     }

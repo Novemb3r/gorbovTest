@@ -1,9 +1,11 @@
 package Authenticator;
 
+import Database.DBConnection;
+
 /**
  * Класс с константами для аутентификации
  */
-public class Constants {
+public final class Constants {
 
     public static final String TABLE = "auth";
 

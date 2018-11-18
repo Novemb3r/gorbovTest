@@ -15,7 +15,7 @@ public class AuthExample {
 
         conn.open();
 
-        Authenticator auth = new Authenticator(conn);
+        Authenticator auth = new Authenticator();
         DBStatement stat = new DBStatement(conn);
         
         if (auth.isRegistred("i@i.ru")) {

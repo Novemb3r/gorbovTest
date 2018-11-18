@@ -1,8 +1,8 @@
 CREATE TABLE auth
 (
-  `id` INT(8) unsigned NOT NULL AUTO_INCREMENT,
-  `email` CHAR(30) NOT NULL PRIMARY KEY,
-  `password` CHAR(30)
+  `id` INT(8) unsigned NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `email` CHAR(30) NOT NULL UNIQUE,
+  `password` CHAR(32)
 )DEFAULT CHARSET=utf8 ENGINE=InnoDB;
 
 CREATE TABLE users
