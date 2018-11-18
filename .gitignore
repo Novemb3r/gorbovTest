@@ -1,0 +1,9 @@
+#Intellij IDEA files
+.idea
+
+#Builded files
+out
+
+#other
+.gitignore.save
+.directory
