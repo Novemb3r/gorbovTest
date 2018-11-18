@@ -1,6 +1,4 @@
-package Authenticator;
-
-import Database.DBConnection;
+package DBAuthenticator;
 
 /**
  * Класс с константами для аутентификации

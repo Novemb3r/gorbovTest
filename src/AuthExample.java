@@ -1,10 +1,8 @@
-import Authenticator.Authenticator;
+import DBAuthenticator.Authenticator;
 import Database.DBConnection;
 import Database.DBException;
-import Database.DBQuery;
 import Database.DBStatement;
 
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class AuthExample {

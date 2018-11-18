@@ -1,4 +1,4 @@
-import Authenticator.Authenticator;
+import DBAuthenticator.Authenticator;
 import Database.DBConnection;
 import Database.DBException;
 import Database.DBStatement;

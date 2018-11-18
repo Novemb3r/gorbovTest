@@ -1,6 +1,6 @@
 package Models.Registrator;
 
-import Authenticator.Authenticator;
+import DBAuthenticator.Authenticator;
 
 public class Registrator {
 
@@ -18,6 +18,7 @@ public class Registrator {
 
         //@TODO: проверки параметров
         //@TODO: распаралелить
+        //@TODO: отправлять данные пользователя в базу
         try {
             auth.register(login, password);
             return true;

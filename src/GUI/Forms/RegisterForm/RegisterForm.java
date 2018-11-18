@@ -32,9 +32,9 @@ public class RegisterForm {
 
 
                 if (Registrator.registerUser(login, password, name, surname, patronym, dateOfBirth, gender)) {
-                    JOptionPane.showMessageDialog(new JFrame(), "Login ok");
+                    JOptionPane.showMessageDialog(new JFrame(), "Register ok");
                 } else {
-                    JOptionPane.showMessageDialog(new JFrame(), "Login ok");
+                    JOptionPane.showMessageDialog(new JFrame(), "Register not ok");
                 }
             }
         });

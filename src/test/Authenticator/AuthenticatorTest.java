@@ -1,7 +1,7 @@
 package test.Authenticator;
 
 import junit.framework.TestCase;
-import Authenticator.Authenticator;
+import DBAuthenticator.Authenticator;
 
 public class AuthenticatorTest extends TestCase {
 

@@ -1,7 +1,6 @@
-package Authenticator;
+package DBAuthenticator;
 
 import Common.Config;
-import Database.DBConnection;
 import Database.DBException;
 import Database.DBQuery;
 import Database.DBStatement;

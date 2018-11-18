@@ -1,16 +1,13 @@
 package GUI.Forms.LoginForm;
 
-import Authenticator.Authenticator;
-import Database.DBConnection;
-import Database.DBStatement;
 import GUI.Controllers.RegisterFrameController;
 import GUI.Forms.Constants;
 import GUI.StateManager;
+import Models.Authenticator.Authenticator;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.ObjectInputFilter;
 
 public class LoginForm extends JFrame {
     public JPanel panel1;
@@ -26,21 +23,14 @@ public class LoginForm extends JFrame {
                 String login = loginTextField.getText();
                 String password = passwordTextField.getText();
 
-                try {
-                    Authenticator auth = new Authenticator();
-
-                    if (auth.authenticate(login, password)){
-                        JOptionPane.showMessageDialog(new JFrame(), "Login ok");
-                    } else {
-                        JOptionPane.showMessageDialog(new JFrame(), "Login ok");
-                    }
-
-                } catch (Exception exception) {
-                    exception.printStackTrace();
+                if (Authenticator.authUser(login, password)) {
+                    JOptionPane.showMessageDialog(new JFrame(), "Login ok");
+                } else {
+                    JOptionPane.showMessageDialog(new JFrame(), "Login not ok");
                 }
+
             }
         });
-
 
         registerButton.addActionListener(new ActionListener() {
             @Override
