@@ -2,6 +2,11 @@ package Models.Authenticator;
 
 public class Authenticator {
 
+    /**
+     * @param login
+     * @param password
+     * @return
+     */
     public static boolean authUser(String login, String password) {
 
         try {
@@ -12,6 +17,7 @@ public class Authenticator {
         } catch (Exception exception) {
             exception.printStackTrace();
         }
+
         return false;
     }
 }

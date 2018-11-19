@@ -17,6 +17,7 @@ public class LoginForm extends JFrame {
     private JPasswordField passwordTextField;
     private JButton loginButton;
     private JButton registerButton;
+    private JButton guestButton;
 
     public LoginForm() {
         loginButton.addActionListener(new ActionListener() {
@@ -41,6 +42,14 @@ public class LoginForm extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 StateManager.destroyForm(Constants.LOGIN_FORM);
                 StateManager.loadController(RegisterFrameController.class, Constants.REGISTER_FORM);
+            }
+        });
+        
+        guestButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                StateManager.destroyForm(Constants.LOGIN_FORM);
+                StateManager.loadController(MainMenuFrameController.class, Constants.MENU_FORM);
             }
         });
     }
