@@ -1,6 +1,7 @@
 package Models.Stages;
 
 import Entities.FieldColor;
+import GUI.Controllers.SquareFormController;
 
 public final class SecondGorbovStage extends StageAbstract {
 
@@ -27,6 +28,11 @@ public final class SecondGorbovStage extends StageAbstract {
     public boolean playersTurn(int number, int color) {
         if (color != this.currentColor || this.currentNumber[color] != number) {
             return false;
+        }
+
+        //if (number == 3) {
+        if (number == 25 && color == FieldColor.BLACK) {
+            SquareFormController.endTest();
         }
 
         this.updateCurrentNumber(color);

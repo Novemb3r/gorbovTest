@@ -7,7 +7,7 @@ import Database.DBStatement;
 
 public class Results {
 
-    public boolean send(String userId, Long dateBeginFirstStage, Long dateEndFirstStage, Long dateBeginSecondStage, Long dateEndSecondStage) throws DBException {
+    public static boolean send(String userId, Long dateBeginFirstStage, Long dateEndFirstStage, Long dateBeginSecondStage, Long dateEndSecondStage) throws DBException {
 
         String sDateBeginFirstStage = dateBeginFirstStage.toString();
         String sDateEndFirstStage = dateEndFirstStage.toString();

@@ -1,7 +1,6 @@
 import Common.Config;
 import Database.DBConnection;
 import GUI.Controllers.LoginFrameController;
-import GUI.Controllers.SquareFrameController;
 import GUI.Forms.Constants;
 import GUI.StateManager;
 
@@ -16,6 +15,6 @@ public class GuiExample {
         }
 
         StateManager.loadController(LoginFrameController.class, Constants.LOGIN_FORM);
-//        StateManager.loadController(SquareFrameController.class, "123123");
+//        StateManager.loadController(SquareFormController.class, "123123");
     }
 }

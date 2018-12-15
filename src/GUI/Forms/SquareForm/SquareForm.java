@@ -1,6 +1,7 @@
 package GUI.Forms.SquareForm;
 
 import GUI.Objects.TestFieldButton;
+import Models.Stages.SecondGorbovStage;
 import Models.Stages.StageAbstract;
 
 import javax.swing.*;
@@ -15,7 +16,7 @@ public class SquareForm extends JFrame {
     private JPanel interfacePannel;
     private JLabel Time;
     public StageAbstract stage;
-    TestFieldButton[][] squareBut;
+    static TestFieldButton[][] squareBut;
 
     public SquareForm(StageAbstract stage) {
         gamePannel.setLayout(new GridLayout(7, 7, 0, 0));
@@ -26,6 +27,11 @@ public class SquareForm extends JFrame {
     }
 
     public void generate() {
+        gamePannel.removeAll();
+        gamePannel.revalidate();
+        gamePannel.repaint();
+
+
         squareBut = new TestFieldButton[7][7];
 
 
@@ -37,13 +43,17 @@ public class SquareForm extends JFrame {
                 squareBut[i][j] = new TestFieldButton();
                 squareBut[i][j].setPreferredSize(new Dimension(width, height));
                 squareBut[i][j].setLocation(j * width, i * height);
-                squareBut[i][j].addActionListener(new FieldButtonController(this.stage));
+                squareBut[i][j].addActionListener(new FieldButtonController(stage));
                 squareBut[i][j].position.setPosition(j, i);
                 squareBut[i][j].setType(field[i][j][0]);
                 squareBut[i][j].setNumber(field[i][j][1]);
-                this.gamePannel.add(squareBut[i][j]);
+                gamePannel.add(squareBut[i][j]);
             }
         }
+    }
+
+    public static void nextStage() {
+
     }
 
 }
