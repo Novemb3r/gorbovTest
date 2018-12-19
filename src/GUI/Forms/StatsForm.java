@@ -15,7 +15,6 @@ import java.sql.SQLException;
 import java.util.Vector;
 
 public class StatsForm {
-    private JTable table1;
     public JPanel panel1;
     public ResultSet data;
 
@@ -33,7 +32,7 @@ public class StatsForm {
             e.printStackTrace();
         }
 
-        table1 = new JTable(buildTableModel(data));
+        JTable table1 = new JTable(buildTableModel(data));
         panel1.add(new JScrollPane(table1));
         //panel1.setPreferredSize(new Dimension(600, 600));
         panel1.revalidate();

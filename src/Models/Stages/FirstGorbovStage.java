@@ -6,6 +6,8 @@ import GUI.Forms.SquareForm.SquareForm;
 
 public final class FirstGorbovStage extends StageAbstract {
 
+    protected Integer errors = 0;
+
     protected int[] currentNumber = {1, 1};
 
     protected int currentColor = FieldColor.BLACK;
@@ -22,6 +24,7 @@ public final class FirstGorbovStage extends StageAbstract {
 
     public boolean playersTurn(int number, int color) {
         if (color != this.currentColor || this.currentNumber[color] != number) {
+            this.errors++;
             return false;
         }
         if (number == 3) {
@@ -33,5 +36,10 @@ public final class FirstGorbovStage extends StageAbstract {
         this.switchCurrentColor();
 
         return true;
+    }
+
+    @Override
+    public Integer getErrors() {
+        return this.errors;
     }
 }

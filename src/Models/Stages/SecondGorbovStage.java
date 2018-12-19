@@ -5,6 +5,8 @@ import GUI.Controllers.SquareFormController;
 
 public final class SecondGorbovStage extends StageAbstract {
 
+    protected Integer errors = 0;
+
     protected int[] currentNumber = {1, 24};
 
     protected int currentColor = FieldColor.BLACK;
@@ -27,11 +29,12 @@ public final class SecondGorbovStage extends StageAbstract {
 
     public boolean playersTurn(int number, int color) {
         if (color != this.currentColor || this.currentNumber[color] != number) {
+            this.errors++;
             return false;
         }
 
         if (number == 3) {
-        //if (number == 25 && color == FieldColor.BLACK) {
+            //if (number == 25 && color == FieldColor.BLACK) {
             SquareFormController.endTest();
         }
 
@@ -39,6 +42,11 @@ public final class SecondGorbovStage extends StageAbstract {
         this.switchCurrentColor();
 
         return true;
+    }
+
+    @Override
+    public Integer getErrors() {
+        return this.errors;
     }
 
 }

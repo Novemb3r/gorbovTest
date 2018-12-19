@@ -17,10 +17,12 @@ public class SquareFormController extends DestroyableFrame implements IFormContr
 
     static Long dateBeginFirstStage, dateEndFirstStage, dateBeginSecondStage, dateEndSecondStage;
 
+    static Integer errorsOnFirstStage, errorsOnSecondStage;
+
     @Override
     public void loadForm() {
         this.frame = new JFrame("Метод Горбова");
-        //this.frame.setPreferredSize(new Dimension(600, 600));
+
         this.frame.setResizable(false);
         field = new SquareForm(new FirstGorbovStage());
         dateBeginFirstStage = Time.getTimestamp();
@@ -35,12 +37,15 @@ public class SquareFormController extends DestroyableFrame implements IFormContr
         dateEndFirstStage = Time.getTimestamp();
         dateBeginSecondStage = Time.getTimestamp();
 
+        errorsOnFirstStage = field.getErrors();
+
         field.stage = new SecondGorbovStage();
         field.generate();
     }
 
     public static void endTest() {
         dateEndSecondStage = Time.getTimestamp();
+        errorsOnSecondStage = field.getErrors();
 
         try {
             Results.send(
@@ -48,7 +53,9 @@ public class SquareFormController extends DestroyableFrame implements IFormContr
                     dateBeginFirstStage,
                     dateEndFirstStage,
                     dateBeginSecondStage,
-                    dateEndSecondStage
+                    dateEndSecondStage,
+                    errorsOnFirstStage,
+                    errorsOnSecondStage
             );
         } catch (DBException e) {
             e.printStackTrace();

@@ -13,10 +13,14 @@ public abstract class StageAbstract {
 
     protected static int currentColor;
 
+    protected static Integer errors;
+
     protected abstract void switchCurrentColor();
 
     protected abstract void updateCurrentNumber(int color);
 
     public abstract boolean playersTurn(int number, int color);
+
+    public abstract Integer getErrors();
 
 }

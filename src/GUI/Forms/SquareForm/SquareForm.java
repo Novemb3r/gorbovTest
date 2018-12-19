@@ -52,8 +52,7 @@ public class SquareForm extends JFrame {
         }
     }
 
-    public static void nextStage() {
-
+    public Integer getErrors() {
+        return stage.getErrors();
     }
-
 }

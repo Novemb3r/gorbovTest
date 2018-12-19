@@ -24,5 +24,6 @@ CREATE TABLE results
   `dateEndFirstStage` BIGINT,
   `dateBeginSecondStage` BIGINT,
   `dateEndSecondStage` BIGINT,
-  `errors` INT(8) unsigned
+  `errorsOnFirstStage` INT(8) unsigned,
+  `errorsOnSecondStage` INT(8) unsigned
 )DEFAULT CHARSET=utf8 ENGINE=InnoDB;
