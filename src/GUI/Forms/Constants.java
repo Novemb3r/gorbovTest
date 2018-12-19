@@ -10,4 +10,6 @@ public final class Constants {
 
     public static final String TEST_STAGE = "test";
 
+    public static final String STATS_FORM = "stats";
+
 }
