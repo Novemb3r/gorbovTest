@@ -24,8 +24,8 @@ public final class FirstGorbovStage extends StageAbstract {
         if (color != this.currentColor || this.currentNumber[color] != number) {
             return false;
         }
-
-        if (number == 24 && color == FieldColor.RED) {
+        if (number == 3) {
+//        if (number == 24 && color == FieldColor.RED) {
             SquareFormController.switchStage();
         }
 

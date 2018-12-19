@@ -1,5 +1,8 @@
 package GUI.Forms.RegisterForm;
 
+import GUI.Controllers.LoginFrameController;
+import GUI.Forms.Constants;
+import GUI.StateManager;
 import Models.Registrator.Registrator;
 
 import javax.swing.*;
@@ -18,24 +21,23 @@ public class RegisterForm {
     private JComboBox genderBox;
 
     public RegisterForm() {
-        registerButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
+        registerButton.addActionListener(e -> {
 
-                String login = loginField.getText();
-                String password = passwordField.getText();
-                String surname = surnameField.getText();
-                String patronymic = patronymicField.getText();
-                String name = nameField.getText();
-                String dateOfBirth = birthdayDateField.getText();
-                String gender = String.valueOf(genderBox.getSelectedItem());
+            String login = loginField.getText();
+            String password = passwordField.getText();
+            String surname = surnameField.getText();
+            String patronymic = patronymicField.getText();
+            String name = nameField.getText();
+            String dateOfBirth = birthdayDateField.getText();
+            String gender = String.valueOf(genderBox.getSelectedItem());
 
 
-                if (Registrator.registerUser(login, password, name, surname, patronymic, dateOfBirth, gender)) {
-                    JOptionPane.showMessageDialog(new JFrame(), "Register ok");
-                } else {
-                    JOptionPane.showMessageDialog(new JFrame(), "Register not ok");
-                }
+            if (Registrator.registerUser(login, password, name, surname, patronymic, dateOfBirth, gender)) {
+                JOptionPane.showMessageDialog(new JFrame(), "Register ok");
+                StateManager.loadController(LoginFrameController.class, Constants.LOGIN_FORM);
+                StateManager.destroyForm(Constants.REGISTER_FORM);
+            } else {
+                JOptionPane.showMessageDialog(new JFrame(), "Register not ok");
             }
         });
     }
