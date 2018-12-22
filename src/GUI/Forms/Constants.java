@@ -36,4 +36,6 @@ public final class Constants {
             "<p style=\"text-align:center\"><span style=\"font-size:20px\">Перед вами таблица, содержащая 25 красных и 24 черных нумерованных квадратов. Необходимо попеременно указывать красные числа в порядке убывания и черные числа в порядке возрастания.</span></p>\n" +
             "\n" + "<br><br><br>" +
             "<p style=\"text-align:center\"><span style=\"font-size:26px\"><em>Желаем удачи!</em></span></p></html>";
+
+    public static final String RESULT_FORM = "result";
 }

@@ -19,9 +19,9 @@ public class SquareFormController extends DestroyableFrame implements IFormContr
 
     public static SquareForm field;
 
-    static Long dateBeginFirstStage, dateEndFirstStage, dateBeginSecondStage, dateEndSecondStage;
+    public static Long dateBeginFirstStage, dateEndFirstStage, dateBeginSecondStage, dateEndSecondStage;
 
-    static Integer errorsOnFirstStage, errorsOnSecondStage;
+    public static Integer errorsOnFirstStage, errorsOnSecondStage;
 
     @Override
     public void loadForm() {
@@ -73,5 +73,7 @@ public class SquareFormController extends DestroyableFrame implements IFormContr
         } catch (DBException e) {
             e.printStackTrace();
         }
+        StateManager.destroyForm(Constants.TEST_STAGE);
+        StateManager.loadController(ResultFormController.class, Constants.RESULT_FORM);
     }
 }
