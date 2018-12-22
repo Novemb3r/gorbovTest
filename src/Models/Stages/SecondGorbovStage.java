@@ -7,7 +7,7 @@ public final class SecondGorbovStage extends StageAbstract {
 
     protected Integer errors = 0;
 
-    protected int[] currentNumber = {1, 24};
+    protected int[] currentNumber = {25, 1};
 
     protected int currentColor = FieldColor.BLACK;
 
@@ -21,9 +21,9 @@ public final class SecondGorbovStage extends StageAbstract {
 
     protected void updateCurrentNumber(int color) {
         if (color == FieldColor.BLACK) {
-            this.currentNumber[color]++;
-        } else {
             this.currentNumber[color]--;
+        } else {
+            this.currentNumber[color]++;
         }
     }
 
@@ -33,8 +33,8 @@ public final class SecondGorbovStage extends StageAbstract {
             return false;
         }
 
-        if (number == 3) {
-            //if (number == 25 && color == FieldColor.BLACK) {
+        //if (number == 3) {
+        if (number == 25 && color == FieldColor.RED) {
             SquareFormController.endTest();
         }
 

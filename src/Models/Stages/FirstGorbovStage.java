@@ -8,18 +8,22 @@ public final class FirstGorbovStage extends StageAbstract {
 
     protected Integer errors = 0;
 
-    protected int[] currentNumber = {1, 1};
+    protected int[] currentNumber = {1, 24};
 
     protected int currentColor = FieldColor.BLACK;
 
     protected void switchCurrentColor() {
-        if (this.currentColor == FieldColor.BLACK && this.currentNumber[FieldColor.BLACK] == 26) {
+        if (this.currentColor == FieldColor.BLACK && this.currentNumber[FieldColor.BLACK] == 25) {
             this.currentColor = FieldColor.RED;
         }
     }
 
     protected void updateCurrentNumber(int color) {
-        this.currentNumber[color]++;
+        if (color == FieldColor.BLACK) {
+            this.currentNumber[color]++;
+        } else {
+            this.currentNumber[color]--;
+        }
     }
 
     public boolean playersTurn(int number, int color) {
@@ -27,8 +31,9 @@ public final class FirstGorbovStage extends StageAbstract {
             this.errors++;
             return false;
         }
-        if (number == 3) {
-//        if (number == 24 && color == FieldColor.RED) {
+
+        //if (number == 3) {
+        if (number == 25 && color == FieldColor.RED) {
             SquareFormController.switchStage();
         }
 
