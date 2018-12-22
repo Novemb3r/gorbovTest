@@ -12,7 +12,7 @@ public class RegisterFrameController extends DestroyableFrame implements IFormCo
     public void loadForm() {
         this.frame = new JFrame("Регистрация");
         frame.setResizable(false);
-       // frame.setPreferredSize(new Dimension(600, 600));
+        frame.setPreferredSize(new Dimension(800, 700));
         RegisterForm field = new RegisterForm();
 
 

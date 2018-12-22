@@ -13,7 +13,8 @@ public class MainMenu {
     private JButton StatsButton;
     public JPanel panel1;
     private JButton runTestButton;
-    private JButton button3;
+    private JButton InterpretationButton;
+    public JLabel nameUser;
 
     public MainMenu() {
         runTestButton.addActionListener(new ActionListener() {
@@ -32,4 +33,6 @@ public class MainMenu {
             }
         });
     }
+
+
 }
