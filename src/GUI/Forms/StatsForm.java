@@ -12,6 +12,7 @@ import java.awt.*;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.util.Arrays;
 import java.util.Vector;
 
 public class StatsForm {
@@ -39,7 +40,7 @@ public class StatsForm {
         panel1.repaint();
 
 
-      //  JOptionPane.showMessageDialog(null, new JScrollPane(table1));
+        //  JOptionPane.showMessageDialog(null, new JScrollPane(table1));
 
     }
 
@@ -54,24 +55,33 @@ public class StatsForm {
 
             ResultSetMetaData metaData = resultSet.getMetaData();
 
-            // имена колонок
-            Vector<String> columnNames = new Vector<>();
-            int columnCount = metaData.getColumnCount();
-            for (int column = 1; column <= columnCount; column++) {
-                columnNames.add(metaData.getColumnName(column));
-            }
+//            // имена колонок
+//            Vector<String> columnNames = new Vector<>();
+//            int columnCount = metaData.getColumnCount();
+//            for (int column = 1; column <= columnCount; column++) {
+//                columnNames.add(metaData.getColumnName(column));
+//            }
 
             // данные таблицы
             Vector<Vector<Object>> data = new Vector<>();
+
+            int testNumber = 1;
             while (resultSet.next()) {
                 Vector<Object> vector = new Vector<>();
-                for (int columnIndex = 1; columnIndex <= columnCount; columnIndex++) {
-                    vector.add(resultSet.getObject(columnIndex));
-                }
+
+                vector.add(++testNumber);
+
+                vector.add((Long)resultSet.getObject(4) - (Long)resultSet.getObject(3));
+
+                vector.add((Long)resultSet.getObject(6) - (Long)resultSet.getObject(5));
+
+                vector.add(resultSet.getObject(7));
+                vector.add(resultSet.getObject(8));
+
                 data.add(vector);
             }
 
-            return new DefaultTableModel(data, columnNames);
+            return new DefaultTableModel(data, new Vector(Arrays.asList(Constants.COLUMN_NAMES)));
 
         } catch (SQLException e) {
             e.printStackTrace();

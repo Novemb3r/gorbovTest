@@ -12,6 +12,15 @@ public final class Constants {
 
     public static final String STATS_FORM = "stats";
 
+    public static final String[] COLUMN_NAMES = new String[]{
+            "id",
+            "Время прохождения первой части",
+            "Время прохождения второй части",
+            "Разница",
+            "Ошибки на первой стадии",
+            "Ошибки на второй стадии"
+    };
+
     public static final String RULES_FORM = "rules";
 
     public static final String RULES_FORM_2 = "rules_2";
