@@ -69,16 +69,22 @@ public class StatsForm {
             while (resultSet.next()) {
                 Vector<Object> vector = new Vector<>();
 
-                vector.add(++testNumber);
+                vector.add(testNumber);
 
-                vector.add((Long)resultSet.getObject(4) - (Long)resultSet.getObject(3));
+                Long timeFirst = (Long) resultSet.getObject(4) - (Long) resultSet.getObject(3);
+                Long timeSecond = (Long) resultSet.getObject(6) - (Long) resultSet.getObject(5);
+                Long timeDelta = timeSecond - timeFirst;
 
-                vector.add((Long)resultSet.getObject(6) - (Long)resultSet.getObject(5));
+
+                vector.add(timeFirst);
+                vector.add(timeSecond);
+                vector.add(timeDelta);
 
                 vector.add(resultSet.getObject(7));
                 vector.add(resultSet.getObject(8));
 
                 data.add(vector);
+                testNumber++;
             }
 
             return new DefaultTableModel(data, new Vector(Arrays.asList(Constants.COLUMN_NAMES)));
