@@ -3,7 +3,9 @@ package GUI.Controllers;
 import DBAuthenticator.AuthData;
 import DBResults.Results;
 import Database.DBException;
+import GUI.Forms.Constants;
 import GUI.Forms.SquareForm.SquareForm;
+import GUI.StateManager;
 import Helpers.Time;
 import Models.Stages.FirstGorbovStage;
 import Models.Stages.SecondGorbovStage;
@@ -12,6 +14,8 @@ import javax.swing.*;
 import java.awt.*;
 
 public class SquareFormController extends DestroyableFrame implements IFormController {
+
+   public static JFrame storedFrame;
 
     public static SquareForm field;
 
@@ -35,10 +39,19 @@ public class SquareFormController extends DestroyableFrame implements IFormContr
 
     public static void switchStage() {
         dateEndFirstStage = Time.getTimestamp();
-        dateBeginSecondStage = Time.getTimestamp();
 
         errorsOnFirstStage = field.getErrors();
+        storedFrame = frame;
+        storedFrame.setVisible(false);
+        //frame.setVisible(false);
+        StateManager.loadController(RulesForm2Controller.class, Constants.RULES_FORM_2);
 
+
+    }
+
+    public static void startSecondStage() {
+        storedFrame.setVisible(true);
+        dateBeginSecondStage = Time.getTimestamp();
         field.stage = new SecondGorbovStage();
         field.generate();
     }
