@@ -1,34 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="GUI.Forms.RegisterForm.RegisterForm">
   <grid id="27dc6" binding="panel1" default-binding="true" layout-manager="FormLayout">
-    <rowspec value="top:2cm:noGrow"/>
+    <rowspec value="top:150px:noGrow"/>
     <rowspec value="top:4dlu:noGrow"/>
-    <rowspec value="center:1cm:noGrow"/>
+    <rowspec value="center:50px:noGrow"/>
     <rowspec value="top:4dlu:noGrow"/>
-    <rowspec value="center:1cm:noGrow"/>
+    <rowspec value="center:50px:noGrow"/>
     <rowspec value="top:4dlu:noGrow"/>
-    <rowspec value="center:1cm:noGrow"/>
+    <rowspec value="center:50px:noGrow"/>
     <rowspec value="top:4dlu:noGrow"/>
-    <rowspec value="center:43px:noGrow"/>
+    <rowspec value="center:50px:noGrow"/>
     <rowspec value="top:4dlu:noGrow"/>
-    <rowspec value="center:max(d;4px):noGrow"/>
+    <rowspec value="center:50px:noGrow"/>
     <rowspec value="top:4dlu:noGrow"/>
-    <rowspec value="center:39px:noGrow"/>
+    <rowspec value="center:50px:noGrow"/>
     <rowspec value="top:4dlu:noGrow"/>
-    <rowspec value="center:max(d;4px):noGrow"/>
+    <rowspec value="center:50px:noGrow"/>
     <rowspec value="top:4dlu:noGrow"/>
-    <rowspec value="center:max(d;4px):noGrow"/>
+    <rowspec value="center:50px:noGrow"/>
     <colspec value="fill:max(d;4px):noGrow"/>
-    <colspec value="left:4dlu:noGrow"/>
-    <colspec value="left:4cm:noGrow"/>
+    <colspec value="left:50px:noGrow"/>
+    <colspec value="left:150px:noGrow"/>
     <colspec value="fill:max(d;4px):noGrow"/>
-    <colspec value="fill:8cm:noGrow"/>
+    <colspec value="fill:450px:noGrow"/>
     <colspec value="left:4dlu:noGrow"/>
     <colspec value="fill:max(d;4px):noGrow"/>
     <constraints>
-      <xy x="20" y="20" width="485" height="517"/>
+      <xy x="20" y="20" width="669" height="606"/>
     </constraints>
-    <properties/>
+    <properties>
+      <font name="Times New Roman" size="18"/>
+    </properties>
     <border type="none"/>
     <children>
       <component id="db5de" class="javax.swing.JTextField" binding="loginField">
@@ -38,7 +40,9 @@
           </grid>
           <forms defaultalign-horz="false"/>
         </constraints>
-        <properties/>
+        <properties>
+          <font name="Times New Roman" size="18"/>
+        </properties>
       </component>
       <component id="83eb6" class="javax.swing.JPasswordField" binding="passwordField">
         <constraints>
@@ -47,7 +51,9 @@
           </grid>
           <forms defaultalign-horz="false"/>
         </constraints>
-        <properties/>
+        <properties>
+          <font name="Times New Roman" size="18"/>
+        </properties>
       </component>
       <component id="2ef97" class="javax.swing.JTextField" binding="surnameField">
         <constraints>
@@ -56,7 +62,9 @@
           </grid>
           <forms defaultalign-horz="false"/>
         </constraints>
-        <properties/>
+        <properties>
+          <font name="Times New Roman" size="18"/>
+        </properties>
       </component>
       <component id="eed04" class="javax.swing.JTextField" binding="nameField">
         <constraints>
@@ -65,7 +73,9 @@
           </grid>
           <forms defaultalign-horz="false"/>
         </constraints>
-        <properties/>
+        <properties>
+          <font name="Times New Roman" size="18"/>
+        </properties>
       </component>
       <component id="31cc7" class="javax.swing.JButton" binding="registerButton">
         <constraints>
@@ -73,6 +83,7 @@
           <forms/>
         </constraints>
         <properties>
+          <font name="Times New Roman" size="18"/>
           <text value="Зарегистрироваться"/>
         </properties>
       </component>
@@ -83,7 +94,9 @@
           </grid>
           <forms defaultalign-horz="false"/>
         </constraints>
-        <properties/>
+        <properties>
+          <font name="Times New Roman" size="18"/>
+        </properties>
       </component>
       <component id="167f6" class="javax.swing.JTextField" binding="birthdayDateField">
         <constraints>
@@ -92,59 +105,67 @@
           </grid>
           <forms defaultalign-horz="false"/>
         </constraints>
-        <properties/>
+        <properties>
+          <font name="Times New Roman" size="18"/>
+        </properties>
       </component>
       <component id="1e0a1" class="javax.swing.JLabel">
         <constraints>
-          <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-          <forms/>
+          <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-horz="false"/>
         </constraints>
         <properties>
+          <font name="Times New Roman" size="18"/>
           <text value="Логин"/>
         </properties>
       </component>
       <component id="4039" class="javax.swing.JLabel">
         <constraints>
-          <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-          <forms/>
+          <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-horz="false"/>
         </constraints>
         <properties>
+          <font name="Times New Roman" size="18"/>
           <text value="Пароль"/>
         </properties>
       </component>
       <component id="503b6" class="javax.swing.JLabel">
         <constraints>
-          <grid row="6" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-          <forms/>
+          <grid row="6" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-horz="false"/>
         </constraints>
         <properties>
+          <font name="Times New Roman" size="18"/>
           <text value="Фамилия"/>
         </properties>
       </component>
       <component id="1048" class="javax.swing.JLabel">
         <constraints>
-          <grid row="8" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-          <forms/>
+          <grid row="8" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-horz="false"/>
         </constraints>
         <properties>
+          <font name="Times New Roman" size="18"/>
           <text value="Имя"/>
         </properties>
       </component>
       <component id="5e018" class="javax.swing.JLabel">
         <constraints>
-          <grid row="10" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-          <forms/>
+          <grid row="10" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-horz="false"/>
         </constraints>
         <properties>
+          <font name="Times New Roman" size="18"/>
           <text value="Отчество"/>
         </properties>
       </component>
       <component id="e81cd" class="javax.swing.JLabel">
         <constraints>
-          <grid row="12" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-          <forms/>
+          <grid row="12" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-horz="false"/>
         </constraints>
         <properties>
+          <font name="Times New Roman" size="18"/>
           <text value="Дата рождения"/>
         </properties>
       </component>
@@ -154,6 +175,7 @@
           <forms/>
         </constraints>
         <properties>
+          <font name="Times New Roman" size="18"/>
           <model>
             <item value="М"/>
             <item value="Ж"/>
@@ -162,11 +184,22 @@
       </component>
       <component id="40be9" class="javax.swing.JLabel">
         <constraints>
-          <grid row="14" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-          <forms/>
+          <grid row="14" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-horz="false"/>
         </constraints>
         <properties>
+          <font name="Times New Roman" size="18"/>
           <text value="Пол"/>
+        </properties>
+      </component>
+      <component id="3f2d5" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-horz="false" defaultalign-vert="false"/>
+        </constraints>
+        <properties>
+          <font name="Times New Roman" size="18"/>
+          <text value="Регистрация нового пользователя"/>
         </properties>
       </component>
     </children>
