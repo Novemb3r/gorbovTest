@@ -1,6 +1,6 @@
 package GUI.Forms.MainMenuForm;
 
-import GUI.Controllers.SquareFormController;
+import GUI.Controllers.RulesFormController;
 import GUI.Controllers.StatsFormController;
 import GUI.Forms.Constants;
 import GUI.StateManager;
@@ -20,7 +20,8 @@ public class MainMenu {
             @Override
             public void actionPerformed(ActionEvent e) {
                 StateManager.destroyForm(Constants.MENU_FORM);
-                StateManager.loadController(SquareFormController.class, Constants.TEST_STAGE);
+                //StateManager.loadController(SquareFormController.class, Constants.TEST_STAGE);
+                StateManager.loadController(RulesFormController.class, Constants.RULES_FORM);
             }
         });
         StatsButton.addActionListener(new ActionListener() {

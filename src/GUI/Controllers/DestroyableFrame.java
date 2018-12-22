@@ -4,7 +4,7 @@ import javax.swing.*;
 
 public class DestroyableFrame {
 
-    protected JFrame frame;
+    protected static JFrame frame;
 
     public void destroyForm() {
         frame.dispose();
