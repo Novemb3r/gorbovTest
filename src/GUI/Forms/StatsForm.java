@@ -20,6 +20,7 @@ public class StatsForm {
     public ResultSet data;
 
     public StatsForm() {
+        panel1.setPreferredSize(new Dimension(800,700));
         panel1.setLayout(new GridBagLayout());
         String query = (new DBQuery())
                 .select("*")
@@ -34,14 +35,11 @@ public class StatsForm {
         }
 
         JTable table1 = new JTable(buildTableModel(data));
-        panel1.add(new JScrollPane(table1));
-        //panel1.setPreferredSize(new Dimension(600, 600));
+        JScrollPane table = new JScrollPane(table1);
+        table.setPreferredSize(new Dimension(800,700));
+        panel1.add(table);
         panel1.revalidate();
         panel1.repaint();
-
-
-        //  JOptionPane.showMessageDialog(null, new JScrollPane(table1));
-
     }
 
     /**
