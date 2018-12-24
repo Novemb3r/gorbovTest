@@ -1,9 +1,11 @@
 package GUI.Forms.LoginForm;
 
 import DBAuthenticator.AuthData;
+import GUI.Controllers.DoctorMainMenuController;
 import GUI.Controllers.MainMenuFrameController;
 import GUI.Controllers.RegisterFrameController;
 import GUI.Forms.Constants;
+import GUI.Forms.DoctorMainMenu.DoctorMainMenu;
 import GUI.Forms.MainMenuForm.MainMenu;
 import GUI.StateManager;
 import Models.Authenticator.Authenticator;
@@ -31,7 +33,11 @@ public class LoginForm extends JFrame {
                     AuthData.setUserName(login);
                     JOptionPane.showMessageDialog(new JFrame(), "Login ok");
                     StateManager.destroyForm(Constants.LOGIN_FORM);
-                    StateManager.loadController(MainMenuFrameController .class, Constants.MENU_FORM);
+                    if (Authenticator.isUserDoctor()) {
+                        StateManager.loadController(MainMenuFrameController.class, Constants.MENU_FORM);
+                    } else {
+                        StateManager.loadController(DoctorMainMenuController.class, Constants.MENU_FORM);
+                    }
                 } else {
                     JOptionPane.showMessageDialog(new JFrame(), "Login not ok");
                 }
