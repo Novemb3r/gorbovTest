@@ -5,6 +5,8 @@ import GUI.Forms.RulesForm.RulesForm;
 
 import javax.swing.*;
 
+import java.awt.*;
+
 import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 
 public class RulesFormController extends DestroyableFrame implements IFormController {
@@ -13,6 +15,7 @@ public class RulesFormController extends DestroyableFrame implements IFormContro
     public void loadForm() {
         frame = new JFrame("Информация");
         frame.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        frame.setPreferredSize(new Dimension(800, 700));
         frame.setResizable(false);
 
         RulesForm field = new RulesForm();

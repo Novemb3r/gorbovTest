@@ -21,7 +21,7 @@ public class MainMenuFrameController extends DestroyableFrame implements IFormCo
 
         if (AuthData.getUserName() == "guest")
                field.nameUser.setText("гостя");
-        else field.nameUser.setText("тестируемого   " + AuthData.getUserName());
+        else field.nameUser.setText(AuthData.getUserName());
         frame.setContentPane(field.panel1);
 
         frame.pack();
