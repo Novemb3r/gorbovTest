@@ -6,7 +6,7 @@ import GUI.Forms.SquareForm.SquareForm;
 
 public final class FirstGorbovStage extends StageAbstract {
 
-    protected Integer errors = 0;
+    public static Integer errors = 0;
 
     protected int[] currentNumber = {1, 25};
 
@@ -29,6 +29,7 @@ public final class FirstGorbovStage extends StageAbstract {
     public boolean playersTurn(int number, int color) {
         if (color != this.currentColor || this.currentNumber[color] != number) {
             this.errors++;
+            //SquareForm..setText(this.errors.toString());
             return false;
         }
 

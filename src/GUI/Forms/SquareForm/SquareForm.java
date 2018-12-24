@@ -1,12 +1,14 @@
 package GUI.Forms.SquareForm;
 
 import GUI.Objects.TestFieldButton;
+import Models.Stages.FirstGorbovStage;
 import Models.Stages.SecondGorbovStage;
 import Models.Stages.StageAbstract;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ComponentAdapter;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import static Helpers.Random.getRandomGameField;
 
@@ -14,16 +16,34 @@ public class SquareForm extends JFrame {
     public JPanel panel1;
     private JPanel gamePannel;
     private JPanel interfacePannel;
-    private JLabel Time;
+    public JLabel Error1;
+    private JLabel Error2;
     public StageAbstract stage;
     static TestFieldButton[][] squareBut;
+    private Timer fpsTimer;
+
+    private void fps()
+    {
+        fpsTimer = new Timer(15, new fpsListener());
+        fpsTimer.start();
+    }
+
+    public class fpsListener implements ActionListener
+    {
+        public void actionPerformed(ActionEvent e)
+        {
+
+            Error1.setText(FirstGorbovStage.errors.toString());
+            Error2.setText(SecondGorbovStage.errors.toString());
+
+        }
+    }
 
     public SquareForm(StageAbstract stage) {
         gamePannel.setLayout(new GridLayout(7, 7, 0, 0));
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         this.stage = stage;
-        Time.setText("HEREWILLBETIME");
     }
 
     public void generate() {
@@ -50,6 +70,7 @@ public class SquareForm extends JFrame {
                 gamePannel.add(squareBut[i][j]);
             }
         }
+        fps();
     }
 
     public Integer getErrors() {
