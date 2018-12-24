@@ -5,7 +5,7 @@ import GUI.Controllers.SquareFormController;
 
 public final class SecondGorbovStage extends StageAbstract {
 
-    protected Integer errors = 0;
+    public static Integer errors = 0;
 
     protected int[] currentNumber = {1, 25};
 

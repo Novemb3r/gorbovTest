@@ -13,7 +13,7 @@ public abstract class StageAbstract {
 
     protected static int currentColor;
 
-    protected static Integer errors;
+    public static Integer errors;
 
     protected abstract void switchCurrentColor();
 
