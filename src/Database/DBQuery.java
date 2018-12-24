@@ -179,6 +179,22 @@ public class DBQuery {
     }
 
     /**
+     * @return DBQuery
+     */
+    public DBQuery join(String table) {
+        this.queryStatement += " INNER JOIN " + "`" + table + "` ";
+        return this;
+    }
+
+    /**
+     * @return DBQuery
+     */
+    public DBQuery on(String cond) {
+        this.queryStatement += " ON " + cond;
+        return this;
+    }
+
+    /**
      * Добавляет and к запросу
      *
      * @return DBQuerry

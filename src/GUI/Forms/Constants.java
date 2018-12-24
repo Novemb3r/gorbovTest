@@ -21,6 +21,16 @@ public final class Constants {
             "Ошибки на второй стадии"
     };
 
+    public static final String[] DOCTOR_COLUMN_NAMES = new String[]{
+            "id",
+            "Имя",
+            "Время прохождения первой части",
+            "Время прохождения второй части",
+            "Разница",
+            "Ошибки на первой стадии",
+            "Ошибки на второй стадии"
+    };
+
     public static final String RULES_FORM = "rules";
 
     public static final String RULES_FORM_2 = "rules_2";
