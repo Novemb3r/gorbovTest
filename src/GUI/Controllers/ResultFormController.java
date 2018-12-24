@@ -7,11 +7,14 @@ import GUI.Forms.RulesForm.RulesForm;
 import javax.swing.*;
 import java.awt.*;
 
+import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
+
 public class ResultFormController extends DestroyableFrame implements IFormController {
 
     @Override
     public void loadForm() {
         frame = new JFrame("Результаты");
+        frame.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         frame.setResizable(false);
 
         ResultForm field = new ResultForm();

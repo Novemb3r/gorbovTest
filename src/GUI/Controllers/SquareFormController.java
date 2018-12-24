@@ -11,7 +11,8 @@ import Models.Stages.FirstGorbovStage;
 import Models.Stages.SecondGorbovStage;
 
 import javax.swing.*;
-import java.awt.*;
+
+import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 
 public class SquareFormController extends DestroyableFrame implements IFormController {
 
@@ -25,16 +26,17 @@ public class SquareFormController extends DestroyableFrame implements IFormContr
 
     @Override
     public void loadForm() {
-        this.frame = new JFrame("Метод Горбова");
+        frame = new JFrame("Метод Горбова");
+        frame.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
-        this.frame.setResizable(false);
+        frame.setResizable(false);
         field = new SquareForm(new FirstGorbovStage());
         dateBeginFirstStage = Time.getTimestamp();
         field.generate();
-        this.frame.setContentPane(field.panel1);
+        frame.setContentPane(field.panel1);
 
-        this.frame.pack();
-        this.frame.setVisible(true);
+        frame.pack();
+        frame.setVisible(true);
     }
 
     public static void switchStage() {
