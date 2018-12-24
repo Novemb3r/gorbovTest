@@ -60,7 +60,7 @@
         </constraints>
         <properties>
           <font name="Times New Roman" size="22"/>
-          <text value="Личный кабинет&#10;"/>
+          <text value="Личный кабинет тестируемого"/>
         </properties>
       </component>
       <component id="16527" class="javax.swing.JLabel" binding="nameUser">

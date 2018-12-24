@@ -18,7 +18,7 @@ public class DoctorMainMenuController extends DestroyableFrame implements IFormC
 
         if (AuthData.getUserName() == "guest")
             field.nameUser.setText("гостя");
-        else field.nameUser.setText("тестируемого   " + AuthData.getUserName());
+        else field.nameUser.setText(AuthData.getUserName());
         frame.setContentPane(field.panel1);
 
         frame.pack();

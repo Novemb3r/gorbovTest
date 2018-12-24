@@ -99,7 +99,8 @@
           <grid row="6" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="OK"/>
+          <font name="Times New Roman" size="18"/>
+          <text value="Перейти в личный кабинет"/>
         </properties>
       </component>
       <component id="8b160" class="javax.swing.JLabel">

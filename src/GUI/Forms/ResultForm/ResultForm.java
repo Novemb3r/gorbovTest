@@ -1,5 +1,6 @@
 package GUI.Forms.ResultForm;
 
+import GUI.Controllers.MainMenuFrameController;
 import GUI.Controllers.SquareFormController;
 import GUI.Forms.Constants;
 import GUI.Forms.SquareForm.SquareForm;
@@ -23,8 +24,10 @@ public class ResultForm {
     public ResultForm() {
         OKButton.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(ActionEvent e)
+            {
                 StateManager.destroyForm(Constants.RESULT_FORM);
+                StateManager.loadController(MainMenuFrameController.class, Constants.MENU_FORM);
             }
         });
         labelErr1.setText(SquareFormController.errorsOnFirstStage.toString());
