@@ -76,6 +76,7 @@ public class SquareFormController extends DestroyableFrame implements IFormContr
             e.printStackTrace();
         }
         StateManager.destroyForm(Constants.TEST_STAGE);
+        storedFrame.dispose();
         StateManager.loadController(ResultFormController.class, Constants.RESULT_FORM);
     }
 }
