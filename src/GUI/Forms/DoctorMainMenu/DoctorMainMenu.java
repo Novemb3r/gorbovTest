@@ -14,18 +14,17 @@ public class DoctorMainMenu {
     private JButton StatsButton;
     public JPanel panel1;
     private JButton runTestButton;
-    private JButton InterpretationButton;
     public JLabel nameUser;
 
     public DoctorMainMenu() {
-        runTestButton.addActionListener(new ActionListener() {
+       /* runTestButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 StateManager.destroyForm(Constants.MENU_FORM);
                 //StateManager.loadController(SquareFormController.class, Constants.TEST_STAGE);
                 StateManager.loadController(RulesFormController.class, Constants.RULES_FORM);
             }
-        });
+        });*/
         StatsButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
