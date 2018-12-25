@@ -5,11 +5,15 @@ import DBAuthenticator.AuthData;
 import Database.DBException;
 import Database.DBQuery;
 import Database.DBStatement;
+import GUI.Controllers.MainMenuFrameController;
 import GUI.Forms.Constants;
+import GUI.StateManager;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
@@ -19,9 +23,11 @@ import java.util.Vector;
 public class DoctorStatsForm {
     public JPanel panel1;
     public ResultSet data;
-
+    public JButton goBack;
     public DoctorStatsForm() {
-        panel1.setLayout(new GridBagLayout());
+        panel1.setPreferredSize(new Dimension(800,650));
+        panel1.setLayout(new BorderLayout());
+       // panel1.setLayout(new GridBagLayout());
         String query = (new DBQuery())
                 .select("*")
                 .from("results")
@@ -35,7 +41,24 @@ public class DoctorStatsForm {
         }
 
         JTable table1 = new JTable(buildTableModel(data));
-        panel1.add(new JScrollPane(table1));
+        JScrollPane table = new JScrollPane(table1);
+        table.setPreferredSize(new Dimension(800,600));
+
+        goBack = new JButton("Вернуться в личный кабинет");
+
+        goBack.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e)
+            {
+                StateManager.destroyForm(Constants.STATS_FORM);
+                StateManager.loadController(MainMenuFrameController.class, Constants.MENU_FORM);
+            }
+        });
+
+        panel1.add(table);
+        goBack.setPreferredSize(new Dimension(800,25));
+        goBack.setFont(new Font("Times New Roman",Font.PLAIN, 18));
+        panel1.add(goBack,"South");
         //panel1.setPreferredSize(new Dimension(600, 600));
         panel1.revalidate();
         panel1.repaint();
