@@ -7,10 +7,6 @@
     <rowspec value="top:4dlu:noGrow"/>
     <rowspec value="center:50px:noGrow"/>
     <rowspec value="top:4dlu:noGrow"/>
-    <rowspec value="center:50px:noGrow"/>
-    <rowspec value="top:4dlu:noGrow"/>
-    <rowspec value="center:50px:noGrow"/>
-    <rowspec value="top:4dlu:noGrow"/>
     <rowspec value="center:4cm:noGrow"/>
     <colspec value="fill:max(d;4px):noGrow"/>
     <colspec value="left:50px:noGrow"/>
@@ -25,32 +21,12 @@
     <children>
       <component id="41d95" class="javax.swing.JButton" binding="StatsButton">
         <constraints>
-          <grid row="6" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-          <forms/>
-        </constraints>
-        <properties>
-          <font name="Times New Roman" size="18"/>
-          <text value="Статистика тестируемых"/>
-        </properties>
-      </component>
-      <component id="66026" class="javax.swing.JButton" binding="runTestButton">
-        <constraints>
           <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
           <forms/>
         </constraints>
         <properties>
           <font name="Times New Roman" size="18"/>
-          <text value="Пройти тест"/>
-        </properties>
-      </component>
-      <component id="3d8cb" class="javax.swing.JButton" binding="InterpretationButton">
-        <constraints>
-          <grid row="8" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-          <forms/>
-        </constraints>
-        <properties>
-          <font name="Times New Roman" size="18"/>
-          <text value="Интерпретация результата"/>
+          <text value="Статистика тестируемых"/>
         </properties>
       </component>
       <component id="578f8" class="javax.swing.JLabel">

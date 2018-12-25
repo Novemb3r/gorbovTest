@@ -5,6 +5,7 @@ import DBAuthenticator.AuthData;
 import Database.DBException;
 import Database.DBQuery;
 import Database.DBStatement;
+import GUI.Controllers.DoctorMainMenuController;
 import GUI.Controllers.MainMenuFrameController;
 import GUI.Forms.Constants;
 import GUI.StateManager;
@@ -51,7 +52,7 @@ public class DoctorStatsForm {
             public void actionPerformed(ActionEvent e)
             {
                 StateManager.destroyForm(Constants.STATS_FORM);
-                StateManager.loadController(MainMenuFrameController.class, Constants.MENU_FORM);
+                StateManager.loadController(DoctorMainMenuController.class, Constants.MENU_FORM);
             }
         });
 
