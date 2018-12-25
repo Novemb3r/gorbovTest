@@ -12,6 +12,8 @@ public final class Constants {
 
     public static final String STATS_FORM = "stats";
 
+    public static final String INTERPR_FORM = "interpretation";
+
     public static final String[] COLUMN_NAMES = new String[]{
             "id",
             "Время прохождения первой части",
