@@ -4,6 +4,7 @@ import DBAuthenticator.AuthData;
 import GUI.Forms.DoctorStatsForm.DoctorStatsForm;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class DoctorStatsFormController extends DestroyableFrame implements IFormController {
     @Override
@@ -12,6 +13,7 @@ public class DoctorStatsFormController extends DestroyableFrame implements IForm
         this.frame = new JFrame("Статистика пользователя " + AuthData.getUserName());
         frame.setResizable(false);
         // frame.setPreferredSize(new Dimension(600, 600));
+        frame.setPreferredSize(new Dimension(800, 700));
         DoctorStatsForm field = new DoctorStatsForm();
 
 

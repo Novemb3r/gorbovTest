@@ -27,7 +27,7 @@ public class StatsForm {
     public StatsForm() {
 
 
-        panel1.setPreferredSize(new Dimension(800,600));
+        panel1.setPreferredSize(new Dimension(800,650));
         panel1.setLayout(new BorderLayout());
 
 
@@ -47,7 +47,7 @@ public class StatsForm {
 
         JTable table1 = new JTable(buildTableModel(data));
         JScrollPane table = new JScrollPane(table1);
-        table.setPreferredSize(new Dimension(800,500));
+        table.setPreferredSize(new Dimension(800,600));
         goBack = new JButton("Вернуться в личный кабинет");
 
 
@@ -63,6 +63,7 @@ public class StatsForm {
         panel1.add(table);
 
         goBack.setPreferredSize(new Dimension(800,25));
+        goBack.setFont(new Font("Times New Roman",Font.PLAIN, 18));
         panel1.add(goBack,"South");
         panel1.revalidate();
         panel1.repaint();
