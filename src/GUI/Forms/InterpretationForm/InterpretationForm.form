@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="GUI.Forms.InterpretationForm.InterpretationForm">
+  <grid id="27dc6" binding="panel1" default-binding="true" layout-manager="FormLayout">
+    <rowspec value="center:150px:noGrow"/>
+    <rowspec value="center:100px:noGrow"/>
+    <rowspec value="top:50px:noGrow"/>
+    <rowspec value="top:50px:noGrow"/>
+    <rowspec value="center:49px:noGrow"/>
+    <rowspec value="top:25px:noGrow"/>
+    <rowspec value="top:50px:noGrow"/>
+    <rowspec value="center:150px:noGrow"/>
+    <rowspec value="center:50px:noGrow"/>
+    <colspec value="fill:d:grow"/>
+    <constraints>
+      <xy x="20" y="20" width="500" height="707"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <component id="d3fb3" class="javax.swing.JButton" binding="goBackButton">
+        <constraints>
+          <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="200" height="24"/>
+          </grid>
+          <forms/>
+        </constraints>
+        <properties>
+          <font name="Times New Roman" size="18"/>
+          <text value="Вернуться в личный кабинет"/>
+        </properties>
+      </component>
+      <component id="f63aa" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-horz="false"/>
+        </constraints>
+        <properties>
+          <font name="Times New Roman" size="22"/>
+          <text value="Интерпретация последнего результата&#10;"/>
+        </properties>
+      </component>
+      <component id="5b515" class="javax.swing.JLabel" binding="resultLabel">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-horz="false" defaultalign-vert="false"/>
+        </constraints>
+        <properties>
+          <font name="Times New Roman" size="18"/>
+          <text value=""/>
+        </properties>
+      </component>
+      <component id="57d73" class="javax.swing.JLabel" binding="errorsLabel">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-horz="false" defaultalign-vert="false"/>
+        </constraints>
+        <properties>
+          <font name="Times New Roman" size="18"/>
+          <text value=""/>
+        </properties>
+      </component>
+      <component id="e74f2" class="javax.swing.JLabel" binding="markLabel">
+        <constraints>
+          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-horz="false"/>
+        </constraints>
+        <properties>
+          <font name="Times New Roman" size="18"/>
+          <text value=""/>
+        </properties>
+      </component>
+      <component id="fb5bb" class="javax.swing.JLabel" binding="recom">
+        <constraints>
+          <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-horz="false" defaultalign-vert="false"/>
+        </constraints>
+        <properties>
+          <font name="Times New Roman" size="18"/>
+          <text value=""/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>

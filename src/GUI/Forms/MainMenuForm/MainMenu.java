@@ -1,5 +1,6 @@
 package GUI.Forms.MainMenuForm;
 
+import GUI.Controllers.InterpretationController;
 import GUI.Controllers.RulesFormController;
 import GUI.Controllers.StatsFormController;
 import GUI.Forms.Constants;
@@ -30,6 +31,13 @@ public class MainMenu {
             public void actionPerformed(ActionEvent e) {
                 StateManager.destroyForm(Constants.MENU_FORM);
                 StateManager.loadController(StatsFormController.class, Constants.STATS_FORM);
+            }
+        });
+        InterpretationButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                StateManager.destroyForm(Constants.MENU_FORM);
+                StateManager.loadController(InterpretationController.class, Constants.INTERPR_FORM);
             }
         });
     }

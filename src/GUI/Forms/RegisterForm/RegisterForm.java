@@ -34,8 +34,9 @@ public class RegisterForm {
 
             if (Registrator.registerUser(login, password, name, surname, patronymic, dateOfBirth, gender)) {
                 JOptionPane.showMessageDialog(new JFrame(), "Register ok");
-                StateManager.loadController(LoginFrameController.class, Constants.LOGIN_FORM);
                 StateManager.destroyForm(Constants.REGISTER_FORM);
+                StateManager.loadController(LoginFrameController.class, Constants.LOGIN_FORM);
+
             } else {
                 JOptionPane.showMessageDialog(new JFrame(), "Register not ok");
             }
